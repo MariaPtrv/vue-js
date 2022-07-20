@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <button v-on:click="changeState">Block on/off</button>
-    <Block :is-show-block="stateIsShow" />
+    <button v-on:click="changeState" class="button">Block on/off</button>
+    <Block :is-show-block="stateIsShow" @update:state="handlerState" />
     {{stateIsShow}}
   </div>
 </template>
@@ -14,13 +14,16 @@ export default {
   },
   data() {
     return {
-        stateIsShow: false
+        stateIsShow: true
     }
   },
   methods:{
     changeState() {
-      this.stateIsShow = !this.stateIsShow
+      this.stateIsShow = !this.stateIsShow;
     },
+    handlerState() {
+      this.stateIsShow = false;
+    }
   }
 }
 </script>
