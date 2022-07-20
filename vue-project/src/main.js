@@ -3,8 +3,6 @@
 import Vue from 'vue'
 import App from './App'
 
-import List from './components/List'
-
 Vue.config.productionTip = false
 
 // Vue.component('List', List);

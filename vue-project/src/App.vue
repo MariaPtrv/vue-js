@@ -1,21 +1,26 @@
 <template>
   <div id="app">
-    <h2>Outer title</h2>
-    <List/>
+    <button v-on:click="changeState">Block on/off</button>
+    <Block :is-show-block="stateIsShow" />
+    {{stateIsShow}}
   </div>
 </template>
 
 <script>
-import List from './components/List'
-
+import Block from './components/Block'
 export default {
   components: {
-    List
+    Block
   },
   data() {
     return {
-
+        stateIsShow: false
     }
+  },
+  methods:{
+    changeState() {
+      this.stateIsShow = !this.stateIsShow
+    },
   }
 }
 </script>
